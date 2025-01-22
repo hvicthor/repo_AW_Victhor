@@ -1,0 +1,26 @@
+sources:
+  - name: erp
+    description: Sistema de vendas da empresa Adventure Works (AW)
+    schema: RAW_ADVENTURE_WORKS
+    database: FEA24_11
+    tables:
+      - name: Customer
+      - name: Person
+      - name: SalesReason
+      - name: Salesperson
+      - name: Employee
+      - name: StateProvince
+      - name: Address
+      - name: CountryRegion
+      - name: SalesOrder
+      - name: Detail
+      - name: Product
+      - name: PRODUCTCATEGORY
+      - name: PRODUCTSUBCATEGORY
+      - name: Creditcard
+      - name: SALESORDERDETAIL
+      - name: SALESORDERHEADER
+      - name: SALESORDERHEADERSALESREASON
+      - name: SALESPERSON
+      - name: SALESREASON
+      - name: Store
