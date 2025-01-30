@@ -1,0 +1,15 @@
+models:
+  - name: int_sales__prep_SalesPerson
+    description: Modelo que enriquece os dados de SalesPerson com Employee e SalesTerritory da empresa Adventure Works (AW)
+    columns:
+      - name: PK_SALESPERSON
+        description: Chave primaria de id de vendedores na view int_sales__prep_SalesPerson determinada na camada stg_erp__SalesPerson
+        data_tests:
+              - unique
+              - not_null  
+
+      - name: JOB_TITLE
+        description: Cargo dos funcionarios na view int_sales__prep_SalesPerson determinada na camada stg_erp__Employee
+
+      - name: NAME_TERRITORY
+        description: Paises da nacionalidade dos funcionarios na view int_sales__prep_SalesPerson determinada na camada stg_erp__SalesTerritory

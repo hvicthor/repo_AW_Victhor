@@ -7,7 +7,7 @@
     , sales_person_renomeado as (
         select 
             cast(BUSINESSENTITYID as int ) as pk_salesperson,
-            -- cast(TERRITORYID as int) as fk_territory,
+            cast(TERRITORYID as int) as fk_territory,
             -- cast(SALESQUOTA as int) as sales_quota,
             cast(BONUS as int) as bonus,
             -- cast(COMMISSIONPCT as numeric(18, 3)) as commissionpct,

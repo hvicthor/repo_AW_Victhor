@@ -8,7 +8,7 @@
         select  
             cast(SALESORDERID as int) as pk_sales_order,
             cast(CUSTOMERID as int) as fk_customer,
-            -- cast(SALESPERSONID as int) as fk_salesperson,
+            cast(SALESPERSONID as int) as fk_salesperson,
             -- cast(TERRITORYID as int) as fk_territory,
             cast(BILLTOADDRESSID as int) as fk_billto_address,
             cast(SHIPTOADDRESSID as int) as fk_shipto_address,

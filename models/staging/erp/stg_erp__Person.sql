@@ -18,7 +18,15 @@
             -- cast(ADDITIONALCONTACTINFO as string) as additional_contact_info,
             -- cast(DEMOGRAPHICS as string) as demographics,
             -- cast(ROWGUID as string) as row_guid,
-            -- cast(MODIFIEDDATE as date) as date_modified
+            -- cast(MODIFIEDDATE as date) as date_modified,
+            concat(FIRSTNAME, ' ',
+                coalesce(MIDDLENAME, ''), ' ',
+                LASTNAME
+             ) as full_name
+            
+
+
+
         from fonte_person
     )
 

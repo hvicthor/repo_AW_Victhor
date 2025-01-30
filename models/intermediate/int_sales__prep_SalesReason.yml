@@ -1,0 +1,15 @@
+models:
+  - name: int_sales__prep_SalesReason
+    description: Modelo que enriquece os dados de SalesReason da empresa Adventure Works (AW)
+    columns:
+      - name: PK_SALES_REASON
+        description: Chave primaria do motivo da venda na view int_sales__prep_SalesReason determinada na camada stg_erp__SalesReason
+        data_tests:
+              - unique
+              - not_null  
+
+      - name: NAME_SALES_REASON
+        description: Motivo da venda na view int_sales__prep_SalesReason determinada na camada stg_erp__SalesReason
+
+      - name: REASON_TYPE
+        description: Tipo do motivo da venda na view int_sales__prep_SalesReason determinada na camada stg_erp__SalesReason

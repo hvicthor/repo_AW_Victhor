@@ -1,0 +1,21 @@
+models:
+  - name: int_sales__prep_Product
+    description: Modelo que enriquece os dados de Product da empresa Adventure Works (AW)
+    columns:
+      - name: pk_product
+        description: Chave primaria na view int_sales__prep_Product determinada na camada stg_erp__Product
+        data_tests:
+              - unique
+              - not_null  
+
+      - name: NAME_PRODUCT
+        description: Nome dos produtos na view int_sales__prep_Product determinada na camada stg_erp__Product
+
+      - name: PRODUCT_NUMBER
+        description: Codigo dos produtos na view int_sales__prep_Product determinada na camada stg_erp__stg_erp__Product
+
+      - name: STANDARD_COST
+        description:  Custo padrao dos produtos na view int_sales__prep_Product determinada na camada stg_erp__stg_erp__Product
+
+      - name: LIST_PRICE
+        description:  Preço de tabela dos produtos na view int_sales__prep_Product determinada na camada stg_erp__stg_erp__Product

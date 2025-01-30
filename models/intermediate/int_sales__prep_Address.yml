@@ -1,0 +1,24 @@
+models:
+  - name: int_sales__prep_Address
+    description: Modelo que enriquece os dados de Address com State Province e CountryRegion da empresa Adventure Works (AW)
+    columns:
+      - name: PK_ADDRESS
+        description: Chave primaria na view int_sales__prep_Address determinada na camada stg_erp__Address
+        data_tests:
+              - unique
+              - not_null  
+
+      - name: CITY
+        description: Dados sobre as cidades das vendas na view int_sales__prep_Address determinada na camada stg_erp__Address
+
+      - name: COUNTRY_REGION_CODE
+        description: Dados dos códigos dos paises na view int_sales__prep_Address determinada na camada stg_erp__CountryRegion
+
+      - name: COUNTRY_REGION_NAME
+        description:  Dados dos nomes dos paises na view int_sales__prep_Address determinada na camada stg_erp__CountryRegion
+
+      - name: STATE_PROVINCE_NAME
+        description:  Dados dos nomes das regioes na view int_sales__prep_Address determinada na camada stg_erp__StateProvince
+
+      - name: STATE_PROVINCE_CODE
+        description: Dados dos nomes das regioes na view int_sales__prep_Address determinada na camada stg_erp__StateProvince

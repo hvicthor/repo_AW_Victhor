@@ -7,7 +7,7 @@ with
     , Country_Region_renomeado as (
         select 
             cast(COUNTRYREGIONCODE as string) as pk_country_region,
-            cast(NAME as string) as name_country_region,
+            cast(NAME as string) as Country_Region_Name,
             -- cast(MODIFIEDDATE as date) as date_modified
         from fonte_CountryRegion
     )
