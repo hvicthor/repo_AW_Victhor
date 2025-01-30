@@ -1,0 +1,91 @@
+sources:
+  - name: erp
+    description: Sistema de vendas da empresa Adventure Works (AW)
+    schema: RAW_ADVENTURE_WORKS
+    database: FEA24_11
+    tables:
+      - name: Customer
+        columns:
+          - name: CUSTOMERID
+            data_tests:
+              - unique
+              - not_null  
+      - name: Person
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null 
+      - name: SalesReason
+        columns:
+          - name: SALESREASONID
+            data_tests:
+              - unique
+              - not_null 
+      - name: Salesperson
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null 
+      - name: StateProvince
+        columns:
+          - name: STATEPROVINCEID
+            data_tests:
+              - unique
+              - not_null 
+      - name: Address
+        columns:
+          - name: ADDRESSID
+            data_tests:
+              - unique
+              - not_null 
+      - name: CountryRegion
+        columns:
+          - name: COUNTRYREGIONCODE
+            data_tests:
+              - unique
+              - not_null 
+      - name: Product
+        columns:
+          - name: PRODUCTID
+            data_tests:
+              - unique
+              - not_null 
+      - name: Creditcard
+        columns:
+          - name: CREDITCARDID
+            data_tests:
+              - unique
+              - not_null 
+      - name: SALESORDERDETAIL
+        columns:
+          - name: SALESORDERDETAILID
+            data_tests:
+              - unique
+              - not_null 
+      - name: SALESORDERHEADER
+        columns:
+          - name: SALESORDERID
+            data_tests:
+              - unique
+              - not_null 
+      - name: SALESORDERHEADERSALESREASON
+      - name: SALESTERRITORY
+        columns:
+          - name: TERRITORYID
+            data_tests:
+              - unique
+              - not_null 
+      - name: Store
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null 
+      - name: Employee
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null 

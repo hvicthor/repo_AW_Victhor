@@ -1,0 +1,84 @@
+models:
+  - name: int_sales__prep_Sales
+    description: Criado modelo de Sales que enriquece os dados de SalesOrderDetail com SalesOrderHeader, SalesReason e SalesOrderHeaderSalesReason da empresa Adventure Works (AW)
+    columns:
+      - name: sk_sales
+        description: Chave surrogate key criado na view int_sales__prep_Sales usando os dados de fk_sales_order e pk_sales_order_detail
+
+      - name: PK_SALES_ORDER_DETAIL
+        description: Chave primaria na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderDetail
+
+      - name: FK_SALES_ORDER
+        description: Chave estrangeira de ordem de vendas na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderDetail
+
+      - name: FK_PRODUCT
+        description: Chave estrangeira de id de produtos na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderDetail
+
+      - name: FK_CUSTOMER
+        description:  Chave estrangeira de id de clientes na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader
+
+      - name: fk_salesperson
+        description: Chave estrangeira de id de vendedores na view int_sales__prep_Sales determinada na camada stg_erp__SalesPerson
+
+      - name: FK_BILLTO_ADDRESS
+        description:  Chave estrangeira de id de endereço de combrança na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader
+
+      - name: FK_SHIPTO_ADDRESS
+        description: Chave estrangeira de id de endereço de entrega na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader
+
+      - name: FK_CREDIT_CARD
+        description: Chave estrangeira de id de cartao de credito na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader
+
+      - name: DATE_ORDER
+        description: Data do pedido de compra na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader
+
+      - name: DATE_SHIP
+        description: Data de envio na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader
+
+      - name: DATE_DUE
+        description: Data de entrega na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader
+
+      - name: ORDER_QUANTITY
+        description: Quantidade pedida na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderDetail
+
+      - name: STATUS
+        description: Status do pedido na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderDetail
+
+      - name: NAME_SALES_REASON
+        description: Motivo da venda na view int_sales__prep_Sales determinada na camada stg_erp__SalesReason
+
+      - name: REASON_TYPE
+        description: Tipo do motivo da venda na view int_sales__prep_Sales determinada na camada stg_erp__SalesReason
+
+      - name: UNIT_PRICE
+        description: Preço unitario na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderDetail
+
+      - name: UNIT_PRICE_DISCOUNT
+        description: Desconto no preço unitario na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderDetail
+
+      - name: SUBTOTAL
+        description: Subtotal com a venda na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader
+
+      - name: TAX_AMOUNT
+        description: Valor do imposto na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader
+
+      - name: FREIGHT
+        description: Frete na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader
+
+      - name: TOTAL_DUE
+        description: Total devido na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderHeader                         
+
+      - name: total_gross_sales
+        description: Medida que multiplica a contagem de produtos pelo preço unitario para calcular a venda bruta.
+
+      - name: total_gross_amount
+        description: Medida que multiplica o preço unitario pela quantidade de itens para obter o valor bruto negociado      
+
+      - name: net_amount
+        description: Medida que subtrai o valor do desconto do valor bruto total para obter o valor líquido negociado    
+
+      - name: average_gross_amount_per_sales
+        description: Medida que calcula o valor bruto total para cada detalhe do pedido de venda e o divide pelo número de registros na partição de sk_sales
+
+      - name: average_ticket
+        description: Medida que calcula o valor médio do ticket, considerando o desconto aplicado.

@@ -1,0 +1,15 @@
+models:
+  - name: int_sales__prep_Customer
+    description: Modelo que enriquece os dados de Customer com Person e SalesTerritory da empresa Adventure Works (AW)
+    columns:
+      - name: PK_CUSTOMER
+        description: Chave primaria na view int_sales__prep_Customer determinada na camada stg_erp__Customer
+        data_tests:
+              - unique
+              - not_null  
+
+      - name: FULL_NAME
+        description: Nome completo dos clientes na view int_sales__prep_Customer determinada na camada stg_erp__Person
+
+      - name: NAME_TERRITORY
+        description: Nomes dos paises na view int_sales__prep_Customer determinada na camada stg_erp__SalesTerritory

@@ -1,0 +1,12 @@
+models:
+  - name: int_sales__prep_Creditcard
+    description: Modelo que enriquece os dados de Creditcard da empresa Adventure Works (AW)
+    columns:
+      - name: PK_CREDIT_CARD
+        description: Chave primaria na view int_sales__prep_Creditcard determinada na camada stg_erp__Creditcard
+        data_tests:
+              - unique
+              - not_null  
+
+      - name: CARD_TYPE
+        description: Dados sobre os tipos de cartoes usados nas vendas da view int_sales__prep_Creditcard determinada na camada stg_erp__Creditcard
