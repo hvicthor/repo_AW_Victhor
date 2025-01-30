@@ -1,0 +1,12 @@
+models:
+  - name: dim_Customer
+    description: Dimensao dos clientes da empresa Adventure Works (AW)
+    columns:
+      - name: PK_CUSTOMER
+        description: Cliente ID
+
+      - name: FULL_NAME
+        description: Nome completo dos clientes
+
+      - name: NAME_TERRITORY
+        description: Nomes dos paises

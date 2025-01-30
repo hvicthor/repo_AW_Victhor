@@ -1,0 +1,9 @@
+models:
+  - name: dim_Creditcard
+    description: Dimensao dos dados do cartao que foi efetuado a compra na empresa Adventure Works (AW)
+    columns:
+      - name: PK_CREDIT_CARD
+        description: Creditcard ID
+
+      - name: CARD_TYPE
+        description: Cartoes usados nas compras

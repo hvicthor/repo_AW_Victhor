@@ -1,0 +1,21 @@
+models:
+  - name: dim_Address
+    description: Dimensão de Address da empresa Adventure Works (AW)
+    columns:
+      - name: PK_ADDRESS
+        description: Address ID
+
+      - name: CITY
+        description: Cidades das vendas
+
+      - name: COUNTRY_REGION_CODE
+        description: Códigos dos paises
+
+      - name: COUNTRY_REGION_NAME
+        description:  Nomes dos paises
+
+      - name: STATE_PROVINCE_NAME
+        description:  Nomes das regioes
+
+      - name: STATE_PROVINCE_CODE
+        description: Coodigos das regioes
