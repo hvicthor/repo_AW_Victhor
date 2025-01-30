@@ -1,0 +1,12 @@
+models:
+  - name: dim_SalesReason
+    description: Dimensao dos dados de motivo das vendas da empresa Adventure Works (AW)
+    columns:
+      - name: PK_SALES_REASON
+        description: Motivo da venda ID
+
+      - name: NAME_SALES_REASON
+        description: Motivo da venda
+
+      - name: REASON_TYPE
+        description: Tipo do motivo da venda

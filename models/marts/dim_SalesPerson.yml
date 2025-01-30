@@ -1,0 +1,12 @@
+models:
+  - name: dim_SalesPerson
+    description: Dimensao dos dados de vendedores da empresa Adventure Works (AW)
+    columns:
+      - name: PK_SALESPERSON
+        description: Vendedor ID
+
+      - name: JOB_TITLE
+        description: Cargos dos funcionarios
+
+      - name: NAME_TERRITORY
+        description: Paises da nacionalidade dos funcionarios

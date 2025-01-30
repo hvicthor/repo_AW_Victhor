@@ -1,0 +1,18 @@
+models:
+  - name: dim_Product
+    description: Dimensão de Product da empresa Adventure Works (AW)
+    columns:
+      - name: pk_product
+        description: Produtos ID
+
+      - name: NAME_PRODUCT
+        description: Nome dos produtos
+
+      - name: PRODUCT_NUMBER
+        description: Codigo dos produtos
+
+      - name: STANDARD_COST
+        description:  Custo padrao dos produtos
+
+      - name: LIST_PRICE
+        description:  Preço de tabela dos produtos

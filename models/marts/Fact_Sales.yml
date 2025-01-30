@@ -1,0 +1,84 @@
+models:
+  - name: fact_Sales
+    description: Tabela fato da empresa Adventure Works (AW)
+    columns:
+      - name: sk_sales
+        description: Chave surrogate key criada usando os dados de fk_sales_order e pk_sales_order_detail
+
+      - name: PK_SALES_ORDER_DETAIL
+        description: Vendas ID
+
+      - name: FK_SALES_ORDER
+        description: Ordem de vendas
+
+      - name: FK_PRODUCT
+        description: Id de produtos 
+
+      - name: FK_CUSTOMER
+        description:  Id de clientes
+
+      - name: fk_salesperson
+        description: Id de vendedores
+
+      - name: FK_BILLTO_ADDRESS
+        description:  Id de endereço de combrança
+
+      - name: FK_SHIPTO_ADDRESS
+        description: Id de endereço de entrega
+
+      - name: FK_CREDIT_CARD
+        description: Id de cartao de credito
+
+      - name: DATE_ORDER
+        description: Data do pedido de compra
+
+      - name: DATE_SHIP
+        description: Data de envio
+
+      - name: DATE_DUE
+        description: Data de entrega
+
+      - name: ORDER_QUANTITY
+        description: Quantidade pedida
+
+      - name: STATUS
+        description: Status do pedido
+
+      - name: NAME_SALES_REASON
+        description: Motivo da venda
+
+      - name: REASON_TYPE
+        description: Tipo do motivo da venda
+
+      - name: UNIT_PRICE
+        description: Preço unitario
+
+      - name: UNIT_PRICE_DISCOUNT
+        description: Desconto no preço unitario
+
+      - name: SUBTOTAL
+        description: Subtotal
+
+      - name: TAX_AMOUNT
+        description: Valor do imposto
+
+      - name: FREIGHT
+        description: Frete
+
+      - name: TOTAL_DUE
+        description: Total devido                         
+
+      - name: total_gross_sales
+        description: Calculo da venda bruta.
+
+      - name: total_gross_amount
+        description: Calculo do valor bruto negociado      
+
+      - name: net_amount
+        description: Calculo do valor líquido negociado    
+
+      - name: average_gross_amount_per_sales
+        description: Calculo do valor bruto total para cada detalhe do pedido de venda dividido pelo número de registros na partição de sk_sales
+
+      - name: average_ticket
+        description: Calculo do valor médio do ticket, considerando o desconto aplicado.
