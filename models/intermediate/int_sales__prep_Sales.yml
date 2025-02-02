@@ -5,9 +5,12 @@ models:
       - name: sk_sales
         description: Chave surrogate key criado na view int_sales__prep_Sales usando os dados de fk_sales_order e pk_sales_order_detail
 
-      - name: PK_SALES_ORDER_DETAIL
+      - name: pk_sales_order_detail
         description: Chave primaria na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderDetail
-
+        data_tests:
+              - unique
+              - not_null  
+              
       - name: FK_SALES_ORDER
         description: Chave estrangeira de ordem de vendas na view int_sales__prep_Sales determinada na camada stg_erp__SalesOrderDetail
 

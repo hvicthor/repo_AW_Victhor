@@ -1,0 +1,25 @@
+models:
+  - name: stg_erp__SalesOrderDetail
+    description: Modelo que enriquece os dados de SalesReason da empresa Adventure Works (AW)
+    columns:
+      - name: PK_SALES_ORDER_DETAIL
+        description: Chave primaria do motivo da venda na view stg_erp__SalesOrderDetail determinada na camada stg_erp__SalesReason
+        data_tests:
+              - unique
+              - not_null  
+
+      - name: FK_SALES_ORDER
+        description: Motivo da venda na view stg_erp__SalesOrderDetail determinada na camada stg_erp__SalesReason
+
+      - name: FK_PRODUCT
+        description: Tipo do motivo da venda na view stg_erp__SalesOrderDetail determinada na camada stg_erp__SalesReason
+
+      - name: ORDER_QUANTITY
+        description: Motivo da venda na view stg_erp__SalesOrderDetail determinada na camada stg_erp__SalesReason
+
+      - name: UNIT_PRICE
+        description: Tipo do motivo da venda na view stg_erp__SalesOrderDetail determinada na camada stg_erp__SalesReason
+
+      - name: UNIT_PRICE_DISCOUNT
+        description: Tipo do motivo da venda na view stg_erp__SalesOrderDetail determinada na camada stg_erp__SalesReason
+

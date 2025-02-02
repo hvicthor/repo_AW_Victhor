@@ -6,11 +6,11 @@
 
 with
     sales_in_2011 as (
-        select sum(total_gross_amount_per_sales) as total_gross_amount_per_sales
+        select sum(total_gross_amount) as total_gross_amount
         from {{ ref('int_sales__prep_Sales') }}
         where date_order between '2011-1-1' and '2011-12-31'
     )
 
-select total_gross_amount_per_sales
+select total_gross_amount
 from sales_in_2011
-where total_gross_amount_per_sales not between 12646100.00 and 12646200.00
+where total_gross_amount not between 12646100.00 and 12646200.00
