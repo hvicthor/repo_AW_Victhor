@@ -77,7 +77,7 @@ models:
       - name: net_amount
         description: Medida que subtrai o valor do desconto do valor bruto total para obter o valor líquido negociado    
 
-      - name: average_gross_amount_per_sales
+      - name: total_gross_amount_per_sales
         description: Medida que calcula o valor bruto total para cada detalhe do pedido de venda e o divide pelo número de registros na partição de sk_sales
 
       - name: average_ticket

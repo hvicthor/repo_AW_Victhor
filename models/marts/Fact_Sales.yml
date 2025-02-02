@@ -77,7 +77,7 @@ models:
       - name: net_amount
         description: Calculo do valor líquido negociado    
 
-      - name: average_gross_amount_per_sales
+      - name: total_gross_amount_per_sales
         description: Calculo do valor bruto total para cada detalhe do pedido de venda dividido pelo número de registros na partição de sk_sales
 
       - name: average_ticket
