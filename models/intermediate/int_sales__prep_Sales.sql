@@ -17,40 +17,42 @@ SalesOrderDetail as (
 )
 
 , SalesOrderHeaderSalesReason as (
-    select *
-    from {{ ref('stg_erp__SalesOrderHeaderSalesReason') }}    
+    SELECT 
+        pk_sales_order, 
+        LISTAGG(name_sales_reason, ', ') WITHIN GROUP (ORDER BY name_sales_reason) AS name_sales_reason, 
+        LISTAGG(reason_type, ', ') WITHIN GROUP (ORDER BY reason_type) AS reason_type
+    FROM {{ ref('stg_erp__SalesOrderHeaderSalesReason') }} soh
+    LEFT JOIN SalesReason sr ON soh.fk_sales_reason = sr.pk_sales_reason
+    GROUP BY pk_sales_order
 )
 
 , enriquecer_SalesDetail as (
-    select
-        MD5 (SalesOrderDetail.fk_sales_order || ' '  || SalesOrderDetail.pk_sales_order_detail) as sk_sales,
-        SalesOrderDetail.pk_sales_order_detail as pk_sales_order_detail,
-        SalesOrderDetail.fk_sales_order as fk_sales_order,
-        SalesOrderDetail.fk_product as fk_product,
-        SalesOrderHeader.fk_customer as fk_customer,
-        SalesOrderHeader.fk_salesperson as fk_salesperson,
-        SalesOrderHeader.fk_billto_address as fk_billto_address,
-        SalesOrderHeader.fk_shipto_address as fk_shipto_address,
-        SalesOrderHeader.fk_credit_card as fk_credit_card,
-        SalesOrderHeader.date_order as date_order,
-        SalesOrderHeader.date_ship as date_ship,
-        SalesOrderHeader.date_due as date_due,
-        SalesOrderDetail.order_quantity as order_quantity,
-        SalesOrderHeader.status as status,
-        SalesOrderDetail.unit_price as unit_price,
-        SalesOrderDetail.unit_price_discount as unit_price_discount,
-        SalesOrderHeader.subtotal as subtotal,
-        SalesOrderHeader.tax_amount as tax_amount,
-        SalesOrderHeader.freight as freight,
-        SalesOrderHeader.total_due as total_due,
-        coalesce(SalesReason.name_sales_reason, 'Sem razão especificada') as name_sales_reason,
-        coalesce(SalesReason.reason_type, 'Sem tipo especificado') as reason_type
-    
-    from SalesOrderDetail
-
-    left join SalesOrderHeader on SalesOrderDetail.fk_sales_order = SalesOrderHeader.pk_sales_order
-    left join SalesOrderHeaderSalesReason on SalesOrderHeader.pk_sales_order = SalesOrderHeaderSalesReason.pk_sales_order
-    left join SalesReason on SalesOrderHeaderSalesReason.fk_sales_reason = SalesReason.pk_sales_reason
+    SELECT DISTINCT
+        MD5(CONCAT(SOD.fk_sales_order, ' ', SOD.pk_sales_order_detail)) AS sk_sales,
+        SOD.pk_sales_order_detail,
+        SOD.fk_sales_order,
+        SOD.fk_product,
+        SOH.fk_customer,
+        SOH.fk_salesperson,
+        SOH.fk_billto_address,
+        SOH.fk_shipto_address,
+        SOH.fk_credit_card,
+        SOH.date_order,
+        SOH.date_ship,
+        SOH.date_due,
+        SOD.order_quantity,
+        SOH.status,
+        SOD.unit_price,
+        SOD.unit_price_discount,
+        SOH.subtotal,
+        SOH.tax_amount,
+        SOH.freight,
+        SOH.total_due,
+        COALESCE(SOHSR.name_sales_reason, 'Sem razão especificada') AS name_sales_reason,
+        COALESCE(SOHSR.reason_type, 'Sem tipo especificado') AS reason_type
+    FROM SalesOrderDetail SOD
+    LEFT JOIN SalesOrderHeader SOH ON SOD.fk_sales_order = SOH.pk_sales_order
+    LEFT JOIN SalesOrderHeaderSalesReason SOHSR ON SOD.fk_sales_order = SOHSR.pk_sales_order
 
 )
 
