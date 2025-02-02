@@ -81,7 +81,7 @@ SalesOrderDetail as (
         cast (count(fk_product) OVER (PARTITION BY fk_product) as int) * unit_price as total_gross_sales,
         (order_quantity * unit_price) as total_gross_amount,
         (order_quantity * unit_price) - (1-unit_price_discount) as net_amount,
-        (unit_price * order_quantity) / count (sk_sales) over(partition by sk_sales) as average_gross_amount_per_sales,
+        (unit_price * order_quantity) / count (sk_sales) over(partition by sk_sales) as total_gross_amount_per_sales,
         cast (((count(fk_product) OVER (PARTITION BY fk_product)) * unit_price*(1 - unit_price_discount)) / 
         (count(fk_product) OVER (PARTITION BY fk_product)) as numeric(18,2)) as average_ticket
 
