@@ -16,3 +16,9 @@ models:
 
       - name: LIST_PRICE
         description:  Preço de tabela dos produtos
+
+      - name: name_product_category
+        description:  Nome das categorias dos produtos 
+
+      - name: name_product_sub_category
+        description:  Nome das sub categorias dos produtos 

@@ -19,3 +19,9 @@ models:
 
       - name: LIST_PRICE
         description:  Preço de tabela dos produtos na view int_sales__prep_Product determinada na camada stg_erp__stg_erp__Product
+
+      - name: name_product_category
+        description:  Nome das categorias dos produtos na view int_sales__prep_Product determinada na camada stg_erp__Product_Category
+
+      - name: name_product_sub_category
+        description:  Nome das sub categorias dos produtos na view int_sales__prep_Product determinada na camada stg_erp__Product_Sub_Category

@@ -25,7 +25,7 @@ with
             -- cast (PRODUCTLINE as string) as product_line,
             -- cast (CLASS as string) as class,
             -- cast (STYLE as string) as style,
-            -- cast (PRODUCTSUBCATEGORYID as int) as fk_product_sub_category_id,
+            cast (PRODUCTSUBCATEGORYID as int) as fk_product_sub_category,
             -- cast (PRODUCTMODELID as int) as fk_product_model,
             -- cast (SELLSTARTDATE as date) as date_sell_start_date,
             -- cast (SELLENDDATE as date) as date_sell_end_date,

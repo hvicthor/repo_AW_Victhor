@@ -52,6 +52,21 @@ sources:
             data_tests:
               - unique
               - not_null 
+
+      - name: ProductCategory
+        columns:
+          - name: PRODUCTCATEGORYID
+            data_tests:
+              - unique
+              - not_null 
+
+      - name: ProductSubCategory
+        columns:
+          - name: PRODUCTSUBCATEGORYID
+            data_tests:
+              - unique
+              - not_null 
+
       - name: Creditcard
         columns:
           - name: CREDITCARDID
